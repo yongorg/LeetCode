@@ -1,7 +1,6 @@
 package item;
 
 import java.util.HashMap;
-import java.util.HashSet;
 
 /**
  * 给定一个字符串，请你找出其中不含有重复字符的 最长子串 的长度。
@@ -24,7 +23,7 @@ import java.util.HashSet;
  *      请注意，你的答案必须是 子串 的长度，"pwke" 是一个子序列，不是子串。
  *
  */
-public class LengthOfLongestSubstring {
+public class LeetCode3 {
 
 
     public static void main(String[] args) {
@@ -34,6 +33,7 @@ public class LengthOfLongestSubstring {
 
     /**
      *
+     * 方法一：通过hash判断，找到相同的就回到上一个位置
      * @param s
      * @return
      */
@@ -61,6 +61,7 @@ public class LengthOfLongestSubstring {
 
     /**
      *
+     * 方法二直接双指针记录上个位置和结束的位置即可，无需再返回遍历
      * @param s
      * @return
      */
