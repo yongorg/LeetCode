@@ -1,5 +1,6 @@
 package item;
 
+import javax.lang.model.element.VariableElement;
 import java.util.ArrayList;
 
 /**
