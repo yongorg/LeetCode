@@ -33,7 +33,11 @@ import java.util.concurrent.CancellationException;
  * 最后我们去了 3 号房间。
  * 由于我们能够进入每个房间，我们返回 true。
  * 示例 2：
+<<<<<<< HEAD
  *
+=======
+ * <p>
+>>>>>>> origin/master
  * 输入：[[1,3],[3,0,1],[2],[0]]
  * 输出：false
  * 解释：我们不能进入 2 号房间。
