@@ -2,7 +2,9 @@ package item;
 
 import util.ListUtil;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 /**
  * @Author yongz
@@ -52,18 +54,29 @@ public class LeetCode841 {
         System.out.println(new LeetCode841(). canVisitAllRooms(dbList));
     }
 
-    public boolean canVisitAllRooms(List<List<Integer>> rooms) {
+    public Set<Integer> hash = new HashSet();
 
-        boolean rel = true;
-        for (int i = 0; i < rooms.size() -1 && rel; i++) {
-            rel = false;
-            List<Integer> room = rooms.get(i); // 当前i的房间
-            for (int j = 0; j < room.size(); j++) {
-                Integer key = room.get(j); //当前i房间中的钥匙
-                if (key == i + 1) rel = true;
-            }
+    public boolean canVisitAllRooms(List<List<Integer>> rooms) {
+        if (rooms .size() <= 1) return true; //如果就一个房间直接返回true
+        // 先找第一房间的钥匙
+        getKeys(rooms , 0); //搜索钥匙
+
+        for (int i = 1; i < rooms.size(); i++) {
+            if (!hash .contains(i)) return false;
         }
 
-        return rel;
+        return true;
     }
+
+    public void getKeys(List<List<Integer>> rooms , int key) { // 获取当前房间的所有钥匙
+        if (hash.contains(key)) return; //如果已经有钥匙了说明已经搜索过了
+
+        hash.add(key); //当前房间存起来
+
+        List<Integer> room = rooms.get(key);//当前房间的所有钥匙
+        for (int j = 0; j < room.size(); j++) {
+            getKeys(rooms , room.get(j)) ;// 并去找下一个房间的钥匙
+        }
+    }
+
 }
