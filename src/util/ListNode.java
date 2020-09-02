@@ -31,10 +31,11 @@ public class ListNode {
 
         this.val = arr[0];
         ListNode cur = this;
-        for (int i : arr) {
-            cur.next = new ListNode(i);
+        for (int i = 1; i < arr.length; i++) {
+            cur.next = new ListNode(arr[i]);
             cur = cur.next;
         }
+
     }
 
 
