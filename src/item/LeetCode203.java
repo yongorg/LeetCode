@@ -72,7 +72,7 @@ public class LeetCode203 {
         if (head == null)
             return null;
         head.next = removeElements(head, val);
-        return head.val == val? head.next:head;
+         return head.val == val? head.next:head;
 
 
 //        ListNode res = removeElements3(head.next, val);
