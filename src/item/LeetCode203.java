@@ -67,21 +67,16 @@ public class LeetCode203 {
     public ListNode result;
 
     // 递归解决
+// 递归解决
     public ListNode removeElements3(ListNode head, int val) {
 
         if (head == null)
             return null;
-        head.next = removeElements(head, val);
-         return head.val == val? head.next:head;
+        head.next = removeElements3(head.next, val);
+        return head.val == val? head.next:head;
 
-
-//        ListNode res = removeElements3(head.next, val);
-//        if (head.val == val)
-//            return res;
-//        else {
-//            head.next = res;
-//            return head;
-//        }
     }
+
+
 }
 
