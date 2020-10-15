@@ -12,10 +12,11 @@ import java.util.HashSet;
 public class LeetCode141_环形链表 {
     public static void main(String[] args) {
         HashSet<String> set = new HashSet<>();
-        System.out.println(set.add(new String("123456")));
-        System.out.println(set.add(new String("123456")));
-        System.out.println(set.add(new String("123456")));
-        System.out.println(set.add(new String("123456")));
+
+        System.out.println(set.add("123456"));
+        System.out.println(set.add("123456"));
+        System.out.println(set.add("123456"));
+        System.out.println(set.add("123456"));
     }
 
     public boolean hasCycle(ListNode head) {
